@@ -1,0 +1,114 @@
+project_name: EffoNav-release
+run_name: EffoNav
+
+# training setup
+use_wandb: True # set to false if you don't want to log to wandb
+train: True
+batch_size: 256
+epochs: 100
+gpu_ids: [0]
+num_workers: 12
+lr: 5e-4
+optimizer: adamw
+clipping: False
+max_norm: 1.
+# scheduler: "cosine"
+warmup: False 
+warmup_epochs: 4
+cyclic_period: 10
+plateau_patience: 3
+plateau_factor: 0.5
+seed: 0
+
+# model params
+model_type: EffoNav
+obs_encoder: "efficientnet-b0" # by default, this is imagenet pretrained
+obs_encoding_size: 512
+mha_num_attention_heads: 4
+mha_num_attention_layers: 4
+mha_ff_dim_factor: 4
+late_fusion: False
+
+# normalization for the action space
+normalize: True
+
+# context
+context_type: temporal
+context_size: 5
+# tradeoff between action and distance prediction loss
+alpha: 0.5
+
+# distance bounds for distance and action and distance predictions 
+distance:
+  min_dist_cat: 0
+  max_dist_cat: 20
+action:
+  min_dist_cat: 0
+  max_dist_cat: 10
+close_far_threshold: 10 # distance threshold used to seperate the close and the far  subgoals that are sampled per datapoint
+
+# action output params
+len_traj_pred: 5
+learn_angle: True
+
+# dataset specific parameters
+image_size: [85, 64] # width, height
+goal_type: "image"
+
+datasets:
+  # recon:
+  #   data_folder: /root/workspace/crqifcs7v38s73fnfgl0/Nav_datasets/recon
+  #   train: train/data/data_splits/recon/train/ # path to train folder with traj_names.txt
+  #   test: train/data/data_splits/recon/test/ # path to test folder with traj_names.txt
+  #   end_slack: 3 # because many trajectories end in collisions
+  #   goals_per_obs: 1 # how many goals are sampled per observation
+  #   negative_mining: True # negative mining from the ViNG paper (Shah et al.)
+  go_stanford:
+    data_folder: /root/workspace/crqifcs7v38s73fnfgl0/Nav_datasets/go_stanford # datasets/stanford_go_new
+    train: train/data/data_splits/go_stanford/train/
+    test: train/data/data_splits/go_stanford/test/
+    end_slack: 0
+    goals_per_obs: 2 # increase dataset size
+    negative_mining: True
+    
+  # scand:
+  #   data_folder: /root/workspace/crqifcs7v38s73fnfgl0/Nav_datasets/scand/
+  #   train: train/data/data_splits/scand/train/
+  #   test: train/data/data_splits/scand/test/
+  #   end_slack: 0
+  #   goals_per_obs: 1
+  #   negative_mining: True
+
+  # sacson:
+  #   data_folder: /root/workspace/crqifcs7v38s73fnfgl0/Nav_datasets/sacson/
+  #   train: train/data/data_splits/sacson/train/
+  #   test: train/data/data_splits/sacson/test/
+  #   end_slack: 3 # because many trajectories end in collisions
+  #   goals_per_obs: 1
+  #   negative_mining: True
+
+  # private datasets (uncomment if you have access)
+  # seattle:
+  #   data_folder: /home/<username>/vint_dataset/seattle/
+  #   train: /home/<username>/data_splits/seattle/train/
+  #   test: /home/<username>/data_splits/seattle/test/
+  #   end_slack: 0
+  #   goals_per_obs: 1
+  #   negative_mining: True
+  # scand:
+  #   data_folder: /home/<username>/vint_dataset/scand/
+  #   train: /home/<username>/data_splits/scand/train/
+  #   test: /home/<username>/data_splits/scand/test/
+  #   end_slack: 0
+  #   goals_per_obs: 1
+  #   negative_mining: True
+
+# logging stuff
+## =0 turns off
+print_log_freq: 100 # in iterations
+image_log_freq: 1000 #0 # in iterations
+num_images_log: 8 #0 
+pairwise_test_freq: 0 # in epochs
+eval_fraction: 0.25
+wandb_log_freq: 10 # in iterations
+eval_freq: 1 # in epochs
