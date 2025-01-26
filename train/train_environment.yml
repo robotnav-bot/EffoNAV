@@ -1,4 +1,4 @@
-name: nomad_train
+name: EffoNAV
 channels:
 - defaults
 - pytorch
