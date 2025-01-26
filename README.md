@@ -3,6 +3,7 @@ EffoNAV: an Effective Foundation-model-based Visual Navigation Approach for Chal
 
 ## Setup
 ```
+git clone --recursive git@github.com:robotnav-bot/EffoNAV.git
 conda env create -f train/train_environment.yml
 conda activate vint_train
 pip install -e train/
