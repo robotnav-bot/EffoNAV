@@ -27,4 +27,4 @@ python train.py -c config/EffoNAV.yaml
 For the deployment procedures and details, please refer to [Deployment](https://github.com/robodhruv/visualnav-transformer/tree/main?tab=readme-ov-file#deployment)
 
 ## Acknowledgement
-Our work references the training and deployment methods of[visualnav-transformer](https://github.com/robodhruv/visualnav-transformer). We are grateful for their contributions to the field of robot navigation.
+Our work references the training and deployment methods of [visualnav-transformer](https://github.com/robodhruv/visualnav-transformer). We are grateful for their contributions to the field of robot navigation.
