@@ -1,5 +1,6 @@
 # EffoNAV
 EffoNAV: an Effective Foundation-model-based Visual Navigation Approach for Challenging Environment.
+![image](https://github.com/robotnav-bot/EffoNAV/showgif.gif)
 
 ## Setup
 ```
