@@ -1,6 +1,7 @@
 # EffoNAV
 EffoNAV: an Effective Foundation-model-based Visual Navigation Approach for Challenging Environment.
 ![image](https://github.com/robotnav-bot/EffoNAV/blob/main/showgif.gif)
+EffoNAV can realize navigation under challenging situations such as large lighting variations and object variations.
 
 ## Setup
 ```
@@ -29,3 +30,6 @@ For the deployment procedures and details, please refer to [Deployment](https://
 
 ## Acknowledgement
 Our work references the training and deployment methods of [visualnav-transformer](https://github.com/robodhruv/visualnav-transformer). We are grateful for their contributions to the field of robot navigation.
+
+## Citing
+Our paper "EffoNAV: an Effective Foundation-model-based Visual Navigation Approach for Challenging Environment" has been accepted by IEEE Robotics and Automation Letters and will be published soon
