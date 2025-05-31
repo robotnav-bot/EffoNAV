@@ -33,4 +33,12 @@ For the deployment procedures and details, please refer to [Deployment](https://
 Our work references the training and deployment methods of [visualnav-transformer](https://github.com/robodhruv/visualnav-transformer). We are grateful for their contributions to the field of robot navigation.
 
 ## Citing
-Our paper "EffoNAV: an Effective Foundation-model-based Visual Navigation Approach for Challenging Environment" has been accepted by IEEE Robotics and Automation Letters and will be published soon
+```
+@article{shen2025effonav,
+  title={EffoNAV: An Effective Foundation-Model-Based Visual Navigation Approach in Challenging Environment},
+  author={Shen, Wangtian and Gu, Pengfei and Qin, Haijian and Meng, Ziyang},
+  journal={IEEE Robotics and Automation Letters},
+  year={2025},
+  publisher={IEEE}
+}
+```
