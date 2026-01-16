@@ -27,7 +27,7 @@ Run this inside the `./train` directory:
 python train.py -c config/EffoNAV.yaml
 ```
 ## Checkpoint
-You can use our pretrained checkpoints from [here](https://drive.google.com/file/d/1sBdpxa8_iYMFemcMbSmbe5_-JICtxEiq/view?usp=drive_link).
+You can use our pretrained checkpoints from [here](https://drive.google.com/file/d/1Xf7FQNkdId0gSNfKy3TsMsytzUHpMc4A/view?usp=drive_link).
 ## Deployment
 For the deployment procedures and details, please refer to [Deployment](https://github.com/robodhruv/visualnav-transformer/tree/main?tab=readme-ov-file#deployment)
 
